@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/ansys_tools_path-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/ansys_tools_path-{{ version }}.tar.gz
   sha256: 96663cd13436e20f2ab2347aa6c487890962319c80bebc181419c957c19a8de0
 
 build:
@@ -14,15 +14,15 @@ build:
     - save-ansys-path = ansys.tools.path.save:cli
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8,<4.0
+    - python {{ python_min }}
     - flit-core >=3.2,<4
     - pip
   run:
-    - python >=3.8,<4.0
+    - python >={{ python_min }},<4.0
     - platformdirs >=3.6.0
     - click >=8.1.3
 
@@ -34,6 +34,7 @@ test:
     - save-ansys-path --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://path.tools.docs.pyansys.com/
