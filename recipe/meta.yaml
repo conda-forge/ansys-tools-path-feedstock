@@ -1,5 +1,5 @@
 {% set name = "ansys-tools-path" %}
-{% set version = "0.7.1" %}
+{% set version = "0.7.2" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,14 +8,14 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/ansys_tools_path-{{ version }}.tar.gz
-  sha256: 203e16af8ad2d28c64a48fe1a0a8040a1a2528a644b00d69d2bfb941caa26b39
+  sha256: 3c8fb0e8d6d54c46235d4e11f951a4478a50d29bab400853cc54507f003d9f0d
 
 build:
   entry_points:
     - save-ansys-path = ansys.tools.path.save:cli
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
