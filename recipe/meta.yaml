@@ -1,5 +1,5 @@
 {% set name = "ansys-tools-path" %}
-{% set version = "0.7.3" %}
+{% set version = "0.8.0" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/ansys_tools_path-{{ version }}.tar.gz
-  sha256: 7457242a81f203224c45453fb2dcf941e31c36ec445a59d7ecabfe8763ccbe9f
+  sha256: 10fe25893128804537d10e4af316640a1005aca4a52aff9eb8d24eef7af2879b
 
 build:
   entry_points:
